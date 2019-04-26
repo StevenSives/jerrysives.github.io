@@ -1,0 +1,238 @@
+img {
+    width: 60px;
+}
+.section{
+    overflow: hidden;
+}
+
+/*第一屏*/
+.first{
+    padding-top: 80px;
+}
+
+.first .logo{
+    background: url("../images/img01.jpg");
+    background-size: 180px;
+    height: 160px;
+    width: 180px;
+    margin: 0 auto;
+}
+
+.first .text{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.first .text > img{
+    margin: 0 40px;
+    opacity: 0.2;
+    transition: margin 1s,opacity 1s;
+}
+
+.first .intro{
+    background: url("../images/img01.jpg");
+    background-size: 180px;
+    height: 160px;
+    width: 180px;
+    margin: 40px auto;
+}
+
+.first.current .text > img{
+    margin: 0 5px;
+    opacity: 1;
+}
+
+/*第二屏*/
+.second{
+
+}
+
+.second > div{
+    display: flex;
+    /*设置主轴方向的排列方式*/
+    justify-content: space-around;
+    /*设置侧轴方向的排列方式*/
+    align-items: center;
+}
+
+.second .shield{
+    width: 190px;
+    font-size: 0;
+}
+
+.second .shield > img{
+    /*添加过渡效果*/
+    transition: transform 1s;
+}
+
+.second .shield > img:nth-of-type(1){
+    transform: translate(150px,150px) rotate(90deg);
+}
+.second .shield > img:nth-of-type(2){
+    transform: translate(2px,150px) rotate(123deg);
+}
+.second .shield > img:nth-of-type(3){
+    transform: translate(4px,5px) rotate(23deg);
+}
+.second .shield > img:nth-of-type(4){
+    transform: translate(150px,23px) rotate(67deg);
+}
+.second .shield > img:nth-of-type(5){
+    transform: translate(-150px,150px) rotate(286deg);
+}
+.second .shield > img:nth-of-type(6){
+    transform: translate(150px,-150px) rotate(48deg);
+}
+.second .shield > img:nth-of-type(7){
+    transform: translate(150px,-150px) rotate(195deg);
+}
+.second .shield > img:nth-of-type(8){
+    transform: translate(-32px,89px) rotate(125deg);
+}
+.second .shield > img:nth-of-type(9){
+    transform: translate(54px,-150px) rotate(167deg);
+}
+
+.second .info{
+    background: url("../images/img01.jpg");
+    background-size: 180px;
+    height: 160px;
+    width: 180px;
+}
+
+/*添加第二屏过渡效果*/
+.second.current .shield > img{
+    /*清楚默认添加的transform*/
+    transform: none;
+}
+
+
+/*第三屏*/
+.third{
+    position: relative;
+}
+
+.third .info{
+    background: url("../images/img01.jpg");
+    background-size: 180px;
+    height: 160px;
+    width: 180px;
+    position: absolute;
+    /*定位参照父容器的宽高*/
+    left: 50%;
+    top: 50%;
+
+    /*translate是相对于父元素本身的宽高*/
+    transform: translate(-150%,-50%);
+}
+
+.third .circle{
+    border: solid 20px skyblue;
+    border-radius: 50%;
+    height: 260px;
+    width: 260px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(150%,-50%);
+}
+
+.third .circle > .rocket{
+    background: url("../images/img01.jpg");
+    background-size: 120px;
+    height: 105px;
+    width: 120px;
+    position: absolute;
+    left: -600px;
+    top: 650px;
+
+    transition: left 1s, top 1s;
+}
+/*添加第三屏动画*/
+.third.current .circle > .rocket{
+    left: 70px;
+    top: 70px;
+}
+
+/*第四屏*/
+
+.fourth{
+    position: relative;
+}
+
+.fourth .search{
+    width: 529px;
+    height: 438px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-80%,-50%);
+
+    overflow: hidden;
+}
+
+.fourth .search>.searchBar{
+    background: url("../images/img01.jpg");
+    width: 529px;
+    height: 66px;
+    background-size: 529px 66px;
+
+    /*开始时搜索框不可见*/
+    transform: translateX(-100%);
+
+}
+
+.fourth .search>.searchText {
+    background: url("../images/img01.jpg");
+    /*开始时文本不可见0-99*/
+    width: 0px;
+    height: 22px;
+    background-size: 99px 22px;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+
+}
+
+.fourth .search > .serchResult{
+    width: 529px;
+    /*搜索结果默认不可见0-327*/
+    height: 0px;
+    background: url("../images/img01.jpg");
+    background-size: 529px 372px;
+    padding-top: -12px;
+
+
+}
+
+.fourth .info{
+    background: url("../images/img01.jpg");
+    background-size: 180px;
+    height: 160px;
+    width: 180px;
+    position: absolute;
+    /*定位参照父容器的宽高*/
+    right: 50%;
+    top: 50%;
+
+    /*translate是相对于父元素本身的宽高*/
+    transform: translate(200%,-50%);
+}
+/*第四屏过渡效果*/
+
+.fourth.current .search>.searchBar{
+    transform: translateX(0%);
+    transition: transform 1s;
+}
+
+.fourth.current .search>.searchText{
+    width: 99px;
+    transition: width 1s 1s steps(5);
+}
+
+.fourth.current .search>.serchResult{
+    height: 372px;
+    transition: height 1s 2.2s;
+}
